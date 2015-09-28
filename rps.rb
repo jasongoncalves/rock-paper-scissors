@@ -1,10 +1,7 @@
-#user selects one of the 3 possiblities (R,P,S)
-#computer randomly selects one of the 3 possibilities
-#p > r, r > s, s > p
-# if same thing is chosen, = tie
-
 CHOICES = {'p' => 'Paper', 'r' => 'Rock', 's' => 'Scissors'}
 puts "Welcome to my version Rock, Paper, Scissors!"
+puts "In this game, only use the first letter of your choice"
+puts "For example: If you choose Rock, only use the letter r"
 
 def display_winning_msg(winning_choice)
   case winning_choice
@@ -35,9 +32,9 @@ loop do
     puts "Computer Wins!"
     display_winning_msg(computer_choice)
   end
-  puts "Play again? (y/n)"
-  break if gets.chomp.downcase != 'y'
+  puts "Play again? Choose y or n"
+  break unless gets.chomp.downcase == 'y'
 
 end
 
-puts "Buh bye!"
+puts "Thanks for playing, buh bye!"
